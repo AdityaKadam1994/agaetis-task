@@ -64,9 +64,12 @@ ta.addEventListener("keyup", function(e) {
 
 //Validator Function
 const validator = (ele, eleLength, attr, eleVal, elename) => {
-  const letterValidator = /^[a-zA-Z ]+$/;
+  const letterValidator = /^[a-zA-Z]+$/;
+
+  const checker = /^[a-z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+$/i;
+
   if (attr === "text") {
-    if (eleLength > authorChar && elename === "author") {
+    if (elename === "author" && eleLength > authorChar) {
       ele.classList.remove("success");
       ele.classList.add("error");
       ele.nextElementSibling.innerHTML = "Character should not exceed 20";
@@ -78,10 +81,11 @@ const validator = (ele, eleLength, attr, eleVal, elename) => {
       ele.classList.remove("success");
       ele.classList.add("error");
       ele.nextElementSibling.innerHTML = "This field cannot be blank";
-    } else if (!eleVal.match(letterValidator)) {
+    } else if (eleVal.match(checker) && !eleVal.match(letterValidator)) {
       ele.classList.remove("success");
       ele.classList.add("error");
-      ele.nextElementSibling.innerHTML = "Numbers not allowed";
+      ele.nextElementSibling.innerHTML =
+        "Numbers and Special Characters are not allowed";
     } else {
       ele.classList.remove("success");
       ele.classList.add("success");
