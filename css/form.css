@@ -1,0 +1,97 @@
+/*Blog Form Styling*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 60px;
+
+}
+
+.blog-form-head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    flex-basis: 70%;
+}
+
+input[type=text],
+input[type=date],
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#submit {
+    width: 20%;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: rgb(10, 202, 193);
+}
+
+#submit:disabled {
+    background: grey;
+    color: black;
+}
+
+input[type=text]:focus,
+input[type=date]:focus,
+textarea:focus {
+    outline: none;
+}
+
+.blog-content {
+    padding: 20px 30px;
+}
+
+.blog-content p {
+    padding-bottom: 10px;
+}
+
+.error {
+    border: 1px solid red !important;
+}
+
+.success {
+    border: 1px solid green !important;
+}
+
+.error-msg {
+    color: red;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+/*MediaQueries*/
+@media only screen and (max-width: 600px) {
+    .form-wrapper {
+        padding: 30px 15px;
+    }
+
+    form {
+        flex-basis: 100%;
+    }
+
+    .blog-content {
+        padding: 20px 15px;
+    }
+
+}
